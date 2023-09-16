@@ -21,7 +21,7 @@ class Console extends IOAbstract
 {
     public function receive($args = null): ?string
     {
-        echo $this->config['prompt'], "> ";
+        echo $this->config['prompt'];
         $in = fgets(STDIN);
         return false !== $in ? trim($in) : null;
     }
