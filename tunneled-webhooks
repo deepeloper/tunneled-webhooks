@@ -1,0 +1,44 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Starts tunneling service and register webhooks.
+ * @author [deepeloper](https://github.com/deepeloper)
+ * @license [MIT](https://opensource.org/licenses/mit-license.php)
+ */
+
+declare(strict_types = 1);
+
+namespace deepeloper\TunneledWebhooks;
+
+error_reporting(E_ALL);
+
+require_once sprintf("%s/../vendor/autoload.php", __DIR__);
+
+$output = [
+    "Tunneled Webhooks",
+    "",
+];
+if (2 != $argc) {
+    $php = getenv("PHPBIN") ? getenv("PHPBIN") : "php";
+    $output[] = "Starts tunneling service and register appropriate webhooks.";
+    $output[] = sprintf(
+        "Usage: %s %s path/to/config",
+        $php,
+        $_SERVER['PHP_SELF'],
+    );
+    $output[] = "";
+}
+
+echo implode(PHP_EOL, $output);
+if (2 != $argc) {
+    die;
+}
+
+/**
+ * Path to config file
+ */
+$path = $argv[1];
+
+$runner = new Runner();
+$runner->run(require_once $path);

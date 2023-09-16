@@ -1,0 +1,51 @@
+{
+  "name": "deepeloper/tunneled-webhooks",
+  "type": "project",
+  "description": "Tunneled Webhooks",
+  "keywords": ["php", "tunneling", "webhooks"],
+  "license": "MIT",
+  "homepage": "https://github.com/deepeloper/lib-xml",
+  "authors": [
+    {
+      "name": "deepeloper",
+      "homepage": "https://github.com/deepeloper",
+      "role": "lead"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/deepeloper/lib-xml/issues"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "platform": {
+      "php": "8.0"
+    },
+    "optimize-autoloader": true
+  },
+  "bin": [
+    "phpunit"
+  ],
+  "require": {
+    "php": ">=8.0",
+    "ext-json": "*",
+    "irazasyed/telegram-bot-sdk": "^3.13"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "squizlabs/php_codesniffer": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "deepeloper\\TunneledWebhooks\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "deepeloper\\TunneledWebhooks\\": "tests"
+    }
+  },
+  "scripts": {
+    "phpcs": "phpcs --standard=PSR12"
+  }
+}
