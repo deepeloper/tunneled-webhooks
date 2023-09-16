@@ -21,7 +21,7 @@
     "optimize-autoloader": true
   },
   "bin": [
-    "phpunit"
+    "tunneled-webhooks"
   ],
   "require": {
     "php": ">=8.0",
