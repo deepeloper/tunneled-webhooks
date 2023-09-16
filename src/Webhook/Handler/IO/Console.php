@@ -7,7 +7,7 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace deepeloper\TunneledWebhooks\Webhook\Handler\IO;
 
@@ -16,6 +16,8 @@ namespace deepeloper\TunneledWebhooks\Webhook\Handler\IO;
  *
  * Allows to receive from STDIN / send to output messages.<br />
  * Instance created in Console windbag bot.
+ *
+ * @codeCoverageIgnore
  */
 class Console extends IOAbstract
 {

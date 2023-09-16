@@ -7,7 +7,7 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace deepeloper\TunneledWebhooks;
 
@@ -30,5 +30,5 @@ interface RunnerInterface
     /**
      * Stops service, sends error and exits.
      */
-    public function sendError(string $message, string $source): void;
+    public function sendError(string $message, string $source, bool $exit = true): void;
 }

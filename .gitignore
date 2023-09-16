@@ -1,4 +1,4 @@
 .idea
-.stuff
 vendor/
 composer.lock
+bot.windbag.txt

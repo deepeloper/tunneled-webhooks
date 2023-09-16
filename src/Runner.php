@@ -7,7 +7,7 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace deepeloper\TunneledWebhooks;
 
@@ -47,22 +47,18 @@ class Runner implements RunnerInterface
         $this->config = $config;
         $this->logSpecifiedSources =
             !isset($config['logging']['sources']) || !in_array("*", $config['logging']['sources']);
-        
+
         if (function_exists("pcntl_signal")) {
+            // @codeCoverageIgnoreStart
             pcntl_signal(SIGTERM, [$this, "handleShutdown"]);
+            // @codeCoverageIgnoreEnd
         }
-        
+
         try {
             $this->startService();
             $this->registerWebhooks();
-//            $minutes = 0;
-//            while (++$minutes) {
-//                sleep(60);
-//                $this->sendMessage("Working for $minutes minutes...", __METHOD__);
-//            }
-            while (true) {
-                sleep(3600);
-            }
+            $this->loop();
+            // @codeCoverageIgnoreStart
         } catch (Throwable $e) {
             if (is_object($this->service)) {
                 $this->service->stop(sprintf(
@@ -72,6 +68,7 @@ class Runner implements RunnerInterface
                 ));
             }
             throw $e;
+            // @codeCoverageIgnoreEnd
         }
     }
 
@@ -85,15 +82,21 @@ class Runner implements RunnerInterface
         $this->log($message, $source);
     }
 
-    #[NoReturn] public function sendError(string $message, string $source): void
+    #[NoReturn] public function sendError(string $message, string $source, bool $exit = true): void
     {
         $this->service->stop($message);
         $this->log($message, $source, E_ERROR);
-        exit(1);
+        if ($exit) {
+            // @codeCoverageIgnoreStart
+            exit(1);
+            // @codeCoverageIgnoreEnd
+        }
     }
 
     /**
      * Handles terminate signal.
+     *
+     * @codeCoverageIgnore
      */
     public function handleShutdown(int $number, mixed $info = null): void
     {
@@ -114,13 +117,6 @@ class Runner implements RunnerInterface
         $class = $this->config['service']['class'];
         $this->service = new $class();
         $this->service->init($this, $this->config['service']);
-        if (!($this->service instanceof ServiceInterface)) {
-            throw new RuntimeException(sprintf(
-                "Class %s must implement %s",
-                $class,
-                ServiceInterface::class
-            ));
-        }
         $this->service->start();
     }
 
@@ -140,7 +136,6 @@ class Runner implements RunnerInterface
                  * @var ConnectorInterface $instance
                  */
                 $instance = new $class();
-                $instance->init($this, $config);
                 if (!($instance instanceof ConnectorInterface)) {
                     throw new RuntimeException(sprintf(
                         "Class %s must implement %s",
@@ -148,9 +143,25 @@ class Runner implements RunnerInterface
                         ConnectorInterface::class
                     ));
                 }
+                $instance->init($this, $config);
                 $instance->register();
                 $this->webhooks[] = $instance;
             }
+        }
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    protected function loop(): void
+    {
+//            $minutes = 0;
+//            while (++$minutes) {
+//                sleep(60);
+//                $this->sendMessage("Working for $minutes minutes...", __METHOD__);
+//            }
+        while (true) {
+            sleep(3600);
         }
     }
 
@@ -160,7 +171,9 @@ class Runner implements RunnerInterface
             !($this->config['logging']['level'] & $level) ||
             ($this->logSpecifiedSources && !in_array($source, $this->config['logging']['sources']))
         ) {
+            // @codeCoverageIgnoreStart
             return;
+            // @codeCoverageIgnoreEnd
         }
         file_put_contents(
             $this->config['logging']['target'],

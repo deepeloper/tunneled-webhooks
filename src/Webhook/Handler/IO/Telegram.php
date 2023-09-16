@@ -7,7 +7,7 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace deepeloper\TunneledWebhooks\Webhook\Handler\IO;
 
@@ -18,6 +18,8 @@ use Telegram\Bot\Api;
  *
  * Allows to receive/send messages from/to Telegram service calling webhook.
  * Instance created in Telegram windbag bot.
+ *
+ * @codeCoverageIgnore
  */
 class Telegram extends IOAbstract
 {
@@ -28,6 +30,7 @@ class Telegram extends IOAbstract
     public function init(array $config): void
     {
         parent::init($config);
+
         $this->api = new Api($config['token']);
     }
 

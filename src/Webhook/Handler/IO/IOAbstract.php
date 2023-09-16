@@ -7,12 +7,14 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace deepeloper\TunneledWebhooks\Webhook\Handler\IO;
 
 /**
  * Webhook handling I/O abstract class.
+ *
+ * @codeCoverageIgnore
  */
 abstract class IOAbstract implements IOInterface
 {

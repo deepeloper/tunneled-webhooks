@@ -7,7 +7,7 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace deepeloper\TunneledWebhooks\Service;
 
@@ -19,7 +19,7 @@ class Ngrok extends ServiceAbstract
     protected ?string $url = null;
 
     /**
-     * {@inheritdoc}
+     * @codeCoverageIgnore
      */
     public function getURL(): string
     {

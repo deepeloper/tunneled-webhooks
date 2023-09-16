@@ -8,7 +8,7 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace deepeloper\TunneledWebhooks\Webhook\Handler;
 
@@ -17,7 +17,7 @@ error_reporting(E_ALL);
 require_once getenv("COMPOSER_RUNTIME_BIN_DIR") . "/../autoload.php";
 
 $output = [
-    "Tunneled Webhooks Windbag CLI exaple",
+    "Tunneled Webhooks Windbag CLI example",
     "",
 ];
 if (2 != $argc) {

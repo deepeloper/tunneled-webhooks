@@ -40,7 +40,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "deepeloper\\TunneledWebhooks\\": "tests"
+      "deepeloper\\TunneledWebhooks\\": ["tests", "tests/src"]
     }
   },
   "scripts": {
