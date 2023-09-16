@@ -16,7 +16,31 @@ error_reporting(E_ALL);
 
 require_once getenv("COMPOSER_RUNTIME_BIN_DIR") . "/../autoload.php";
 
-$config = (require_once "../config/current.php")['CLI']['Console']['Windbag'];
+$output = [
+    "Tunneled Webhooks Windbag CLI exaple",
+    "",
+];
+if (2 != $argc) {
+    $php = getenv("PHPBIN") ? getenv("PHPBIN") : "/path/to/php";
+    $output[] = sprintf(
+        "Usage: %s %s path/to/config",
+        $php,
+        $_SERVER['PHP_SELF'],
+    );
+    $output[] = "";
+}
+
+echo implode(PHP_EOL, $output);
+if (2 != $argc) {
+    die;
+}
+
+/**
+ * Path to config file
+ */
+$path = $argv[1];
+
+$config = (require_once $path)['CLI']['Console']['Windbag'];
 $io = new IO\Console();
 $io->init($config);
 $bot = new Windbag();
