@@ -35,11 +35,9 @@ class Telegram extends IOAbstract
     {
         $update = $this->api->getWebhookUpdate();
         $result = null;
-        file_put_contents("d:/tg.log", "update->message: " . var_export($update->message, true) . "\nargs: " . var_export($args, true) . "\n", FILE_APPEND);###
         if (isset($update->message)) {
             $this->chatId = $update->message->chat->id;
             $result = $update->message->text;
-            file_put_contents("d:/tg.log", "chatId: $this->chatId, text: $result\n", FILE_APPEND);###
         }
         return $result;
     }
