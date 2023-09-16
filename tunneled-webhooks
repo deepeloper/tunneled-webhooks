@@ -13,14 +13,14 @@ namespace deepeloper\TunneledWebhooks;
 
 error_reporting(E_ALL);
 
-require_once TUNNELED_WEBHOOKS_COMPOSER_INSTALL;
+require_once env("COMPOSER_RUNTIME_BIN_DIR") . "/../autoload.php";
 
 $output = [
     "Tunneled Webhooks",
     "",
 ];
 if (2 != $argc) {
-    $php = getenv("PHPBIN") ? getenv("PHPBIN") : "php";
+    $php = getenv("PHPBIN") ? getenv("PHPBIN") : "/path/to/php";
     $output[] = "Starts tunneling service and register appropriate webhooks.";
     $output[] = sprintf(
         "Usage: %s %s path/to/config",
