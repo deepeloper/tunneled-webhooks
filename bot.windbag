@@ -41,8 +41,10 @@ if (2 != $argc) {
 $path = $argv[1];
 
 $config = (require_once $path)['CLI']['Console']['Windbag'];
+
 $io = new IO\Console();
 $io->init($config);
+
 $bot = new Windbag();
 $bot->init($io);
 

@@ -23,7 +23,7 @@ interface IOInterface
     /**
      * Returns request from service called webhook.
      */
-    public function receive($args = null): mixed;
+    public function receive(mixed $args = null): mixed;
 
     /**
      * Sends response to service called webhook.

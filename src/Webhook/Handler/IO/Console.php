@@ -21,7 +21,7 @@ namespace deepeloper\TunneledWebhooks\Webhook\Handler\IO;
  */
 class Console extends IOAbstract
 {
-    public function receive($args = null): ?string
+    public function receive(mixed $args = null): ?string
     {
         echo $this->config['prompt'];
         $in = fgets(STDIN);
