@@ -4,7 +4,7 @@
   "description": "Tunneled Webhooks",
   "keywords": ["php", "tunneling", "webhooks"],
   "license": "MIT",
-  "homepage": "https://github.com/deepeloper/lib-xml",
+  "homepage": "https://github.com/deepeloper/tunneled-webhooks",
   "authors": [
     {
       "name": "deepeloper",
@@ -13,7 +13,7 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/deepeloper/lib-xml/issues"
+    "issues": "https://github.com/deepeloper/tunneled-webhooks/issues"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
