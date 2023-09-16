@@ -21,6 +21,7 @@ class Windbag extends HandlerAbstract
      */
     public function run(mixed $options = null): void
     {
+        // Receive message.
         $message = $this->io->receive();
         if (null === $message) {
             return;
@@ -35,7 +36,10 @@ class Windbag extends HandlerAbstract
         } else {
             $reply = ":)";
         }
+
+        // Send reply.
         $this->io->send($reply);
+
         $messages[] = $message . PHP_EOL;
         file_put_contents($options, implode("", $messages));
     }

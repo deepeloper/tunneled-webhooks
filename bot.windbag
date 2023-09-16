@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 /**
@@ -12,7 +13,8 @@ declare(strict_types = 1);
 namespace deepeloper\TunneledWebhooks\Webhook\Handler;
 
 error_reporting(E_ALL);
-require_once "../vendor/autoload.php";
+
+require_once getenv("COMPOSER_RUNTIME_BIN_DIR") . "/../autoload.php";
 
 $config = (require_once "../config/current.php")['CLI']['Console']['Windbag'];
 $io = new IO\Console();

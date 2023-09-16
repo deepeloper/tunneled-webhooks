@@ -21,6 +21,7 @@
     "optimize-autoloader": true
   },
   "bin": [
+    "bot.windbag",
     "tunneled-webhooks"
   ],
   "require": {
