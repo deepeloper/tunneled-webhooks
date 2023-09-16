@@ -34,7 +34,7 @@ class Telegram extends IOAbstract
         $this->api = new Api($config['token']);
     }
 
-    public function receive(mixed $args = null): ?string
+    public function receive(mixed $args = null): mixed
     {
         $update = $this->api->getWebhookUpdate();
         $result = null;
