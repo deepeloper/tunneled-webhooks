@@ -13,7 +13,7 @@ namespace deepeloper\TunneledWebhooks;
 
 error_reporting(E_ALL);
 
-require_once sprintf("%s/../vendor/autoload.php", __DIR__);
+require_once TUNNELED_WEBHOOKS_COMPOSER_INSTALL;
 
 $output = [
     "Tunneled Webhooks",
