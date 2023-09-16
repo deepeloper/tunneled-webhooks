@@ -21,7 +21,7 @@ class Windbag extends HandlerAbstract
     /**
      * @param string $options  Path to file containing previous incoming phrases
      */
-    public function run(mixed $options = null): void
+    public function run($options = null): void
     {
         // Receive message.
         $message = $this->io->receive();

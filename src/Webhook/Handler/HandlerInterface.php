@@ -21,5 +21,5 @@ interface HandlerInterface
     /**
      * Processes request to webhook and sends response.
      */
-    public function run(mixed $options = null): void;
+    public function run($options = null): void;
 }

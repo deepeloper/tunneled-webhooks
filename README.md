@@ -67,7 +67,7 @@ Copy "config.skeleton.php" to your own config file and put ngrok path & Telegram
 ## Usage
 
 ### Run tunneling service and bot
-`vendor/bin/tunneled-webhooks /path/to/config.php`.
+`vendor/bin/tunneled-webhooks /path/to/config.php`
 
 Tunneling service will be started, Telegram webhook will be registered, and you could to start conversation with Telegram bot.
 
