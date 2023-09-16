@@ -13,7 +13,7 @@ Runs tunneling service and registers temporary webhooks for workstation having n
 
 * Implemented tunneling services: [ngrok](https://ngrok.com/);
 * Implemented webhooks connectors: [Telegram](https://core.telegram.org/bots/api#setwebhook);
-* Implemented bots: Windbag.
+* Implemented bots: [Windbag](https://github.com/deepeloper/tunneled-webhooks/blob/main/src/Webhook/Handler/Windbag.php).
 
 You can add your own tunneling services, register and handle your own webhooks.
 
@@ -65,6 +65,12 @@ Copy "config.skeleton.php" to your own config file and put ngrok path & Telegram
 ```
 
 ## Usage
-Run `/path/to/php tunneled-webhooks /path/to/config.php` from application root directory.
+
+### Run tunneling service and bot
+`vendor/bin/tunneled-webhooks /path/to/config.php`.
 
 Tunneling service will be started, Telegram webhook will be registered, and you could to start conversation with Telegram bot.
+
+### Run bot from CLI
+
+`vendor/bin/bot.windbag`
