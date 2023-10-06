@@ -21,4 +21,5 @@
         </api>
     </version>
     <template name="clean"/>
+    <setting name="graphs.enabled" value="true"/>
 </phpdocumentor>
