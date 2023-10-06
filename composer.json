@@ -18,7 +18,10 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "symfony/flex": true
+    }
   },
   "bin": [
     "bot.windbag",
@@ -30,6 +33,8 @@
     "irazasyed/telegram-bot-sdk": "^3.13"
   },
   "require-dev": {
+    "jetbrains/phpstorm-attributes": "*",
+    "phpstan/phpstan": "*",
     "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "*"
   },
@@ -40,10 +45,11 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "deepeloper\\TunneledWebhooks\\": ["tests", "tests/src"]
+      "Tests\\": "tests"
     }
   },
   "scripts": {
-    "phpcs": "phpcs --standard=PSR12"
+    "php-cs": "vendor/bin/phpcs --standard=PSR12 src tests config.skeleton.php bot.windbag tunneled-webhooks",
+    "phpstan": "vendor/bin/phpstan -cbuild/config/phpstan.neon"
   }
 }

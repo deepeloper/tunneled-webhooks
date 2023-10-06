@@ -1,3 +1,5 @@
 .phpunit.result.cache
+bin/phpDocumentor.phar
+cache/
 logs/
 output/

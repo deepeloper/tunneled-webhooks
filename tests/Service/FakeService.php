@@ -9,12 +9,14 @@
 
 declare(strict_types=1);
 
-namespace deepeloper\TunneledWebhooks\Service;
+namespace Tests\Service;
+
+use deepeloper\TunneledWebhooks\Service\Ngrok;
 
 /**
  * Ngrok tunneling service.
  */
-class TestService extends Ngrok
+class FakeService extends Ngrok
 {
     public function getURL(): string
     {

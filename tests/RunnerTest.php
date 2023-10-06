@@ -9,8 +9,9 @@
 
 declare(strict_types=1);
 
-namespace deepeloper\TunneledWebhooks;
+namespace Tests;
 
+use JetBrains\PhpStorm\NoReturn;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
@@ -28,9 +29,9 @@ class RunnerTest extends TestCase
      * @cover deepeloper\TunneledWebhooks\Service\ServiceAbstract::stop()
      *
      */
-    public function testRun(): void
+    #[NoReturn] public function testRun(): void
     {
-        $runner = new TestRunner();
+        $runner = new FakeRunner();
         $runner->run(self::$config);
 
         self::assertEquals("stub url", $runner->getServiceURL());
@@ -46,10 +47,9 @@ class RunnerTest extends TestCase
         self::expectException(RuntimeException::class);
 
         $config = self::$config;
-        $config['webhook']['Telegram']['Windbag']['class'] =
-            "\\deepeloper\\TunneledWebhooks\\Webhook\\Connector\\InvalidConnector";
+        $config['webhook']['Telegram']['Windbag']['class'] = "\\Tests\\Webhook\\Connector\\InvalidConnector";
 
-        $runner = new TestRunner();
+        $runner = new FakeRunner();
         $runner->run($config);
     }
 }

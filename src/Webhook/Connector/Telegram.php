@@ -15,6 +15,7 @@ namespace deepeloper\TunneledWebhooks\Webhook\Connector;
  * Telegram webhook connector.
  *
  * @codeCoverageIgnore
+ * @noinspection PhpLoopNeverIteratesInspection
  */
 class Telegram extends ConnectorAbstract
 {
@@ -30,11 +31,6 @@ class Telegram extends ConnectorAbstract
                 $this->runner->getServiceURL(),
             );
             $response = file_get_contents($url);
-            file_put_contents(
-                "d:/tg.log",
-                "url: $url, response: $response\n",
-                FILE_APPEND
-            );###
             if (false === $response) {
                 $fail = "Requesting Telegram API failed";
                 break;
@@ -49,7 +45,7 @@ class Telegram extends ConnectorAbstract
                 break;
             }
             $this->runner->sendMessage("Telegram webhook set successfully", __METHOD__);
-        } while (false);
+        } while (false); /** @phpstan-ignore-line */
 
         if (null !== $fail) {
             $this->runner->sendError($fail, __METHOD__);
@@ -84,7 +80,7 @@ class Telegram extends ConnectorAbstract
                 sprintf("Telegram response: %s", $decoded['description']),
                 __METHOD__,
             );
-        } while (false);
+        } while (false); /** @phpstan-ignore-line */
 
         if (null !== $fail) {
             $this->runner->sendError($fail, __METHOD__);

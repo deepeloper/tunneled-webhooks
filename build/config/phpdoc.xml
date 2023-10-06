@@ -1,0 +1,24 @@
+<phpdocumentor
+        configVersion="3"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://www.phpdoc.org"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/phpDocumentor/phpDocumentor/master/data/xsd/phpdoc.xsd"
+>
+    <paths>
+        <output>../../build/output/api</output>
+        <cache>../../build/cache</cache>
+    </paths>
+    <version number="3">
+        <api format="php">
+            <source dsn="../..">
+                <path>src</path>
+                <path>tests</path>
+            </source>
+            <extensions>
+                <extension>php</extension>
+            </extensions>
+            <visibility>private</visibility>
+        </api>
+    </version>
+    <template name="clean"/>
+</phpdocumentor>

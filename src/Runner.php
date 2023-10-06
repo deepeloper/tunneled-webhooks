@@ -97,6 +97,7 @@ class Runner implements RunnerInterface
      * Handles terminate signal.
      *
      * @codeCoverageIgnore
+     * @noinspection PhpUnusedParameterInspection
      */
     public function handleShutdown(int $number, mixed $info = null): void
     {
@@ -160,7 +161,7 @@ class Runner implements RunnerInterface
 //                sleep(60);
 //                $this->sendMessage("Working for $minutes minutes...", __METHOD__);
 //            }
-        while (true) {
+        while (true) { /** @phpstan-ignore-line */
             sleep(3600);
         }
     }
