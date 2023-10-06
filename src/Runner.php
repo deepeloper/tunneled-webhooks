@@ -14,6 +14,7 @@ namespace deepeloper\TunneledWebhooks;
 use deepeloper\TunneledWebhooks\Service\ServiceInterface;
 use deepeloper\TunneledWebhooks\Webhook\Connector\ConnectorInterface;
 use JetBrains\PhpStorm\NoReturn;
+use Jfcherng\Utility\CliColor;
 use RuntimeException;
 use Throwable;
 
@@ -30,6 +31,12 @@ class Runner implements RunnerInterface
         E_NOTICE => "note",
         E_WARNING => "WARN",
         E_ERROR => "!ERR",
+    ];
+
+    protected array $levelToColor = [
+        E_NOTICE => "f_light_gray",
+        E_WARNING => "f_yellow",
+        E_ERROR => "f_light_red",
     ];
 
     /**
@@ -176,15 +183,20 @@ class Runner implements RunnerInterface
             return;
             // @codeCoverageIgnoreEnd
         }
+        $target = $this->config['logging']['target'];
+        $format = "php://stdout" === $target
+            ? CliColor::color("[%s] [%s] [%s] %s\n", $this->levelToColor[$level])
+            : "[%s] [%s] [%s] %s\n";
         file_put_contents(
-            $this->config['logging']['target'],
+            $target,
             sprintf(
-                "[%s] [%s] [%s] %s\n",
+                $format,
                 date("Y-m-d H:i:s"),
                 $this->levelToString[$level],
                 $source,
                 $message,
             ),
+            FILE_APPEND
         );
     }
 }

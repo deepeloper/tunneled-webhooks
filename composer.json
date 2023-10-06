@@ -34,6 +34,7 @@
   },
   "require-dev": {
     "jetbrains/phpstorm-attributes": "*",
+    "jfcherng/php-color-output": "*",
     "phpstan/phpstan": "*",
     "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "*"

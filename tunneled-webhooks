@@ -13,7 +13,10 @@ namespace deepeloper\TunneledWebhooks;
 
 error_reporting(E_ALL);
 
-require_once getenv("COMPOSER_RUNTIME_BIN_DIR") . "/../autoload.php";
+$binDir = getenv("COMPOSER_RUNTIME_BIN_DIR");
+$binDir = false !== $binDir ? "$binDir/.." : "./vendor";
+require_once "$binDir/autoload.php";
+unset($binDir);
 
 $output = [
     "Tunneled Webhooks",
