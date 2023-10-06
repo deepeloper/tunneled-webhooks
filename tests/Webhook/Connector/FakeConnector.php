@@ -9,9 +9,11 @@
 
 declare(strict_types=1);
 
-namespace deepeloper\TunneledWebhooks\Webhook\Connector;
+namespace Tests\Webhook\Connector;
 
-class TestConnector extends Telegram
+use deepeloper\TunneledWebhooks\Webhook\Connector\Telegram;
+
+class FakeConnector extends Telegram
 {
     public function register(): void
     {

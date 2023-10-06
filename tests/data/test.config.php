@@ -17,7 +17,7 @@ return [
     ],
 
     'service' => [
-        'class' => "\\deepeloper\\TunneledWebhooks\\Service\TestService",
+        'class' => "\\Tests\\Service\FakeService",
 //        'class' => "\\deepeloper\\TunneledWebhooks\\Service\Ngrok",
         // Delay after starting service.
         'delay' => 0, // in seconds
@@ -26,7 +26,7 @@ return [
     'webhook' => [
         'Telegram' => [
             'Windbag' => [
-                'class' => "\\deepeloper\\TunneledWebhooks\\Webhook\\Connector\\TestConnector",
+                'class' => "\\Tests\\Webhook\\Connector\\FakeConnector",
 //                'class' => "\\deepeloper\\TunneledWebhooks\\Webhook\\Connector\\Telegram",
             ],
         ],

@@ -9,12 +9,14 @@
 
 declare(strict_types=1);
 
-namespace deepeloper\TunneledWebhooks;
+namespace Tests;
+
+use deepeloper\TunneledWebhooks\Runner;
 
 /**
  * Runs tunnelling service and registers webhooks.
  */
-class TestRunner extends Runner
+class FakeRunner extends Runner
 {
     protected function loop(): void
     {
