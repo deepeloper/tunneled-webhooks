@@ -56,4 +56,9 @@ class Telegram extends IOAbstract
         }
         $this->api->sendMessage($message);
     }
+
+    public function getApi(): Api
+    {
+        return $this->api;
+    }
 }
