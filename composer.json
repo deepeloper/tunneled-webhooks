@@ -30,11 +30,11 @@
   "require": {
     "php": ">=8.0",
     "ext-json": "*",
-    "irazasyed/telegram-bot-sdk": "^3.13"
+    "irazasyed/telegram-bot-sdk": "^3.13",
+    "jfcherng/php-color-output": "*"
   },
   "require-dev": {
     "jetbrains/phpstorm-attributes": "*",
-    "jfcherng/php-color-output": "*",
     "phpstan/phpstan": "*",
     "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "*"
