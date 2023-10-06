@@ -34,7 +34,7 @@ class Runner implements RunnerInterface
     ];
 
     protected array $levelToColor = [
-        E_NOTICE => "f_light_gray",
+        E_NOTICE => "f_light_cyan",
         E_WARNING => "f_yellow",
         E_ERROR => "f_light_red",
     ];
