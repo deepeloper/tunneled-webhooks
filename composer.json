@@ -28,7 +28,7 @@
     "tunneled-webhooks"
   ],
   "require": {
-    "php": ">=8.0",
+    "php": ">=8.2",
     "ext-json": "*",
     "irazasyed/telegram-bot-sdk": "^3.13",
     "jfcherng/php-color-output": "*"

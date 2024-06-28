@@ -1,4 +1,4 @@
-.phpunit.result.cache
+.phpunit.cache
 bin/phpDocumentor.phar
 cache/
 logs/
