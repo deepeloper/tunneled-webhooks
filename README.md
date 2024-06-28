@@ -31,7 +31,8 @@ You can add your own tunneling services, register and handle your own webhooks.
 
 ### Configuring local web server
 
-#### nginx
+* nginx
+
 Add *.ngrok.io subdomains:
 ```
 server {
@@ -44,7 +45,8 @@ server {
 ```
 and restart nginx.
 
-#### Apache
+* Apache
+
 According to [ngrok docs](https://ngrok.com/docs/using-ngrok-with/virtualHosts/) in own config modify
 &laquo;service/command&raquo; value as `/path/to/ngrok http --host-header=%LOCAL_HOST_NAME% 80`.
 
