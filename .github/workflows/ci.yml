@@ -25,4 +25,10 @@ jobs:
           bootstrap: "vendor/autoload.php"
           configuration: "build/config/phpunit.xml"
           test_suffix: "Test.php"
+          coverage_clover: "coverage.xml"
 #          args: "--display-warnings --display-errors"
+
+      - name: Send code coverage report to Codecov.io
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
