@@ -18,12 +18,11 @@ jobs:
         uses: php-actions/phpunit@v3
         env:
           XDEBUG_MODE: "coverage"
-          ACTION_TEST_SUFFIX: "Test.php"
         with:
           php_version: "8.2"
           php_extensions: "xdebug"
           bootstrap: "vendor/autoload.php"
-#          configuration: "build/config/phpunit.xml"
+          configuration: "build/config/phpunit.xml"
           test_suffix: "Test.php"
           coverage_clover: "coverage.xml"
 #          args: "--display-warnings --display-errors"
