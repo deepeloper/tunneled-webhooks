@@ -18,6 +18,6 @@ jobs:
         uses: php-actions/phpunit@v3
         with:
           php_version: "8.2"
-          php_extensions: "xdebug"
-          coverage_clover: "coverage/clover.xml"
+          coverage: "xdebug3"
+          run: "vendor/bin/phpunit --coverage-clover=coverage.xml"
           bootstrap: "vendor/autoload.php"
