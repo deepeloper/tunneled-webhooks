@@ -4,10 +4,11 @@
 [![GitHub license](https://img.shields.io/github/license/deepeloper/tunneled-webhooks.svg)](https://github.com/deepeloper/tunneled-webhooks/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues-raw/deepeloper/tunneled-webhooks.svg)](https://github.com/deepeloper/tunneled-webhooks/issues)
 [![Packagist](https://img.shields.io/packagist/dt/deepeloper/tunneled-webhooks.svg)](https://packagist.org/packages/deepeloper/tunneled-webhooks)
-![](https://github.com/deepeloper/tunneled-webhooks/actions/workflows/ci.yml/badge.svg?event=push)
-[![Type Coverage](https://shepherd.dev/github/deepeloper/tunneled-webhooks/coverage.svg)](https://shepherd.dev/github/deepeloper/tunneled-webhooks)
+[![CI](https://github.com/deepeloper/tunneled-webhooks/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/deepeloper/tunneled-webhooks/actions)
 [![codecov](https://codecov.io/gh/deepeloper/tunneled-webhooks/branch/main/graph/badge.svg)](https://codecov.io/gh/deepeloper/tunneled-webhooks)
-
+<!--
+[![Type Coverage](https://shepherd.dev/github/deepeloper/tunneled-webhooks/coverage.svg)](https://shepherd.dev/github/deepeloper/tunneled-webhooks)
+-->
 
 [![Donation](https://img.shields.io/badge/Donation-Visa,%20MasterCard,%20Maestro,%20UnionPay,%20YooMoney,%20МИР-red)](https://yoomoney.ru/to/41001351141494)
 
