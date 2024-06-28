@@ -17,10 +17,11 @@ jobs:
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v3
         env:
-          XDEBUG_MODE: coverage
+          XDEBUG_MODE: "coverage"
+          ACTION_TEST_SUFFIX: "Test.php"
         with:
           php_version: "8.2"
           php_extensions: "xdebug"
           bootstrap: "vendor/autoload.php"
           configuration: "build/config/phpunit.xml"
-#          args: "--display-warnings --display-errors"
+          args: "--display-warnings --display-errors"
