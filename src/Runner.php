@@ -184,9 +184,11 @@ class Runner implements RunnerInterface
             // @codeCoverageIgnoreEnd
         }
         $target = $this->config['logging']['target'];
+        // @codeCoverageIgnoreStart
         $format = "php://stdout" === $target
             ? CliColor::color("[%s] [%s] [%s] %s\n", $this->levelToColor[$level])
             : "[%s] [%s] [%s] %s\n";
+        // @codeCoverageIgnoreEnd
         file_put_contents(
             $target,
             sprintf(
