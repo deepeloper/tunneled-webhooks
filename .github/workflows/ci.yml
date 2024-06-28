@@ -23,4 +23,4 @@ jobs:
           php_extensions: "xdebug"
           bootstrap: "vendor/autoload.php"
           configuration: "build/config/phpunit.xml"
-          args: ""--display-warnings --display-errors"
+          args: "--display-warnings --display-errors"
