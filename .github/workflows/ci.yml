@@ -16,11 +16,8 @@ jobs:
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v3
-        env:
-          XDEBUG_MODE: coverage
         with:
           php_version: "8.2"
-          php_extensions: xdebug
-          bootstrap: vendor/autoload.php
-          configuration: build/config/phpunit.xml
-          args: --display-warnings --display-errors
+          php_extensions: "xdebug"
+          coverage_clover: "coverage/clover.xml"
+          bootstrap: "vendor/autoload.php"
