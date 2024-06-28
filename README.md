@@ -29,7 +29,10 @@ You can add your own tunneling services, register and handle your own webhooks.
 ### Webhooks
 [Register Telegram bot](https://core.telegram.org/bots) and receive bot auth token.
 
-### Configuring local web server (nginx)
+### Configuring local web server
+
+* nginx
+
 Add *.ngrok.io subdomains:
 ```
 server {
@@ -42,8 +45,13 @@ server {
 ```
 and restart nginx.
 
+* Apache
+
+According to [ngrok docs](https://ngrok.com/docs/using-ngrok-with/virtualHosts/) in own config modify
+&laquo;service/command&raquo; value as `/path/to/ngrok http --host-header=%LOCAL_HOST_NAME% 80`.
+
 ### Application config
-Copy "config.skeleton.php" to your own config file and put ngrok path & Telegram token to the new file:
+Copy &laquo;config.skeleton.php&raquo; to your own config file and put ngrok path & Telegram token to the new file:
 ```php
     // ...
     'service' => [
